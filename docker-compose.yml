@@ -1,0 +1,7 @@
+services:
+  queue:
+    image: rabbitmq:3.13-management-alpine
+  api:
+    build: .
+    ports: ["8000:8000"]
+    depends_on: [queue]
